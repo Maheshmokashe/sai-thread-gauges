@@ -1,0 +1,52 @@
+# Render.com blueprint — deploys Postgres, the Django API and the React site.
+# Import at https://dashboard.render.com  →  New  →  Blueprint
+databases:
+  - name: sai-db
+    databaseName: sai
+    plan: free
+
+services:
+  # ── Django REST API ──────────────────────────────────────────
+  - type: web
+    name: sai-api
+    runtime: python
+    plan: free
+    rootDir: sai-backend
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python manage.py seed"
+    startCommand: "gunicorn sai_project.wsgi"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sai-db
+          property: connectionString
+      - key: ALLOWED_HOSTS
+        value: "sai-api.onrender.com"
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://sai-web.onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://sai-api.onrender.com"
+      - key: ENQUIRY_NOTIFY_EMAIL
+        value: "saithreadgauges@gmail.com"
+      # For real enquiry emails, add these in the dashboard (keep them secret):
+      # EMAIL_BACKEND = django.core.mail.backends.smtp.EmailBackend
+      # EMAIL_HOST_USER = saithreadgauges@gmail.com
+      # EMAIL_HOST_PASSWORD = <gmail app password>
+
+  # ── React static site ────────────────────────────────────────
+  - type: web
+    name: sai-web
+    runtime: static
+    rootDir: sai-react
+    buildCommand: "npm ci && npm run build"
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://sai-api.onrender.com"
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
