@@ -13,7 +13,7 @@ services:
     plan: free
     rootDir: sai-backend
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python manage.py seed"
-    startCommand: "gunicorn sai_project.wsgi"
+    startCommand: "gunicorn sai_project.wsgi:application --bind 0.0.0.0:$PORT"
     envVars:
       - key: SECRET_KEY
         generateValue: true
@@ -31,10 +31,6 @@ services:
         value: "https://sai-api.onrender.com"
       - key: ENQUIRY_NOTIFY_EMAIL
         value: "saithreadgauges@gmail.com"
-      # For real enquiry emails, add these in the dashboard (keep them secret):
-      # EMAIL_BACKEND = django.core.mail.backends.smtp.EmailBackend
-      # EMAIL_HOST_USER = saithreadgauges@gmail.com
-      # EMAIL_HOST_PASSWORD = <gmail app password>
 
   # ── React static site ────────────────────────────────────────
   - type: web
