@@ -46,7 +46,7 @@ export default function ContactPage() {
   };
 
   const waHref = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent('Hello SAI, I have a gauge enquiry.')}`;
-  const mapSrc = 'https://www.google.com/maps?q=Ashtavinayak+Society+Somnath+Nagar+Wadgaon+Sheri+Pune+411014&output=embed';
+  const mapSrc = 'https://www.google.com/maps?q=Digamber+Nagar+Lane+1+Near+Datta+Mandir+Wadgaon+Sheri+Pune+411014&output=embed';
 
   return (
     <main>

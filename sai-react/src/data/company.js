@@ -16,10 +16,10 @@ export const COMPANY = {
     { name: 'Shubham Hambarde', phone: '7038282353' },
   ],
   address: {
-    line1: 'Ground Floor, Ashtavinayak Society',
-    line2: 'S. No 47/3, Somnath Nagar, Wadgaon Sheri',
-    line3: 'Near Shivraj School, Pune – 411014',
-    maps: 'https://maps.google.com/?q=Ashtavinayak+Society+Somnath+Nagar+Wadgaon+Sheri+Pune',
+    line1: 'S. No. 40/2/2/7, Digamber Nagar Lane No. 1',
+    line2: 'Near Datta Mandir, Second Lane, Wadgaon Sheri',
+    line3: 'Pune – 411014',
+    maps: 'https://maps.google.com/?q=Digamber+Nagar+Lane+1+Near+Datta+Mandir+Wadgaon+Sheri+Pune+411014',
   },
 };
 
