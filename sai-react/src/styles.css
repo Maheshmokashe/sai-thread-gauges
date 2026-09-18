@@ -281,6 +281,7 @@ button { font:inherit; cursor:pointer; }
 .form .btn-solid { width:100%; justify-content:center; margin-top:6px; }
 .form-note { font-family:var(--f-mono); font-size:12px; margin-top:14px; padding:12px 14px; }
 .form-note.ok { color:var(--go); border:1px solid color-mix(in srgb,var(--go) 35%,transparent); background:color-mix(in srgb,var(--go) 10%,transparent); }
+.form-note.warn { color:var(--mark); border:1px solid color-mix(in srgb,var(--mark) 40%,transparent); background:color-mix(in srgb,var(--mark) 10%,transparent); }
 .form-note.err { color:var(--nogo); border:1px solid color-mix(in srgb,var(--nogo) 35%,transparent); background:color-mix(in srgb,var(--nogo) 10%,transparent); }
 
 /* FOOTER */

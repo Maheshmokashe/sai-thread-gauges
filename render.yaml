@@ -24,6 +24,10 @@ services:
         value: "https://saitg-api-hambarde.onrender.com"
       - key: ENQUIRY_NOTIFY_EMAIL
         value: "saithreadgauges@gmail.com"
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        value: "SAI Website <onboarding@resend.dev>"
 
   # ── React static site ────────────────────────────────────────
   - type: web

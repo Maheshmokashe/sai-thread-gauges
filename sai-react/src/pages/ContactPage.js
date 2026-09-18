@@ -37,8 +37,8 @@ export default function ContactPage() {
     setStatus('sending');
     try {
       const payload = { ...form, quantity: form.quantity ? Number(form.quantity) : null };
-      await postEnquiry(payload);
-      setStatus('ok');
+      const result = await postEnquiry(payload);
+      setStatus(result.notification_sent ? 'ok' : 'warning');
       setForm(EMPTY);
     } catch {
       setStatus('error');
@@ -167,7 +167,12 @@ export default function ContactPage() {
             </button>
 
             {status === 'ok' && (
-              <div className="form-note ok">Enquiry received. We'll reply within 24 hours. For anything urgent, call +91 {COMPANY.phonePrimary}.</div>
+              <div className="form-note ok">Enquiry sent to SAI. We'll reply within 24 hours. For anything urgent, call +91 {COMPANY.phonePrimary}.</div>
+            )}
+            {status === 'warning' && (
+              <div className="form-note warn">
+                Your enquiry was received, but the email notification is not configured yet. Please call +91 {COMPANY.phonePrimary} or <a href={waHref} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>message on WhatsApp</a>.
+              </div>
             )}
             {status === 'error' && (
               <div className="form-note err">

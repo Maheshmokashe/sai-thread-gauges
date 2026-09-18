@@ -114,6 +114,8 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='SAI Website <no-reply@saithreadgauges.com>')
 # Where new enquiries are sent:
 ENQUIRY_NOTIFY_EMAIL = config('ENQUIRY_NOTIFY_EMAIL', default='saithreadgauges@gmail.com')
+RESEND_API_KEY = config('RESEND_API_KEY', default='')
+RESEND_FROM_EMAIL = config('RESEND_FROM_EMAIL', default='SAI Website <onboarding@resend.dev>')
 
 # ── Security (production only) ────────────────────────────────────────
 if not DEBUG:
