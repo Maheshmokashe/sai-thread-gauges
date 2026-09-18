@@ -50,19 +50,6 @@ The frontend talks to the API at `http://127.0.0.1:8000` by default. To point it
 
 ---
 
-## Using PostgreSQL locally
-
-1. Create a database and user in Postgres.
-2. In `sai-backend/`, copy `.env.example` to `.env` and set:
-   ```
-   DATABASE_URL=postgres://USER:PASSWORD@localhost:5432/DBNAME
-   ```
-3. Re-run `python manage.py migrate` and `python manage.py seed`.
-
-That's the only change — the app auto-detects `DATABASE_URL` and switches from SQLite to Postgres.
-
----
-
 ## Real enquiry emails
 
 By default new enquiries are saved to the database **and** the form shows an honest
