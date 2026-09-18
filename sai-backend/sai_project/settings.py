@@ -5,7 +5,7 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='dev-insecure-key-change-in-production')
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DJANGO_DEBUG', default=True, cast=bool)
 
 # Comma-separated hostnames in prod, e.g. sai-backend.onrender.com,saithreadgauges.com
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=Csv())

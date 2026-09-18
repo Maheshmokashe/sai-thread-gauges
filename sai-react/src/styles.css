@@ -211,7 +211,7 @@ button { font:inherit; cursor:pointer; }
 .empty { padding:60px 0; text-align:center; color:var(--steel); font-family:var(--f-mono); }
 
 /* DETAIL */
-.detail { padding:36px 0 90px; }
+.detail { padding-top:36px; padding-bottom:90px; }
 .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
 @media (max-width:860px){ .detail-grid{ grid-template-columns:1fr; gap:30px; } }
 .detail-img { border:1px solid var(--line); background:var(--card); padding:12px; align-self:start; cursor:zoom-in; position:relative; }
@@ -262,7 +262,7 @@ button { font:inherit; cursor:pointer; }
 .customers span { font-family:var(--f-mono); font-size:13px; border:1px solid var(--line); padding:8px 14px; background:var(--card); color:var(--ink-soft); }
 
 /* CONTACT */
-.contact-layout { display:grid; grid-template-columns:1fr 1.2fr; gap:48px; padding:40px 0 90px; }
+.contact-layout { display:grid; grid-template-columns:1fr 1.2fr; gap:48px; padding-top:40px; padding-bottom:90px; }
 @media (max-width:860px){ .contact-layout{ grid-template-columns:1fr; gap:34px; } }
 .info-card { border:1px solid var(--line); background:var(--card); padding:20px; margin-bottom:14px; display:flex; gap:14px; }
 .info-card .ico { color:var(--mark); flex:none; margin-top:2px; }
@@ -442,3 +442,21 @@ button { font:inherit; cursor:pointer; }
 .hours .r .d { color:var(--ink-soft); }
 .hours .r .t { font-family:var(--f-mono); font-size:13px; color:var(--ink); }
 .hours .r .t.closed { color:var(--nogo); }
+
+@media (max-width:420px){
+  .wrap { padding-left:16px; padding-right:16px; }
+  .hero-title { font-size:clamp(38px,13vw,52px); overflow-wrap:anywhere; }
+  .hero-actions .btn,.detail-actions .btn { width:100%; justify-content:center; }
+  .hero-callouts { display:grid; grid-template-columns:1fr 1fr; gap:18px 12px; }
+  .filter-bar { align-items:stretch; }
+  .search-box { width:100%; margin-left:0; }
+  .search-box input { width:100%; min-width:0; }
+  .cert-head { align-items:flex-start; flex-direction:column; }
+  .spec-table .r,.list-plain li,.hours .r { align-items:flex-start; flex-direction:column; gap:5px; }
+  .spec-table .v,.list-plain li .meta { text-align:left; overflow-wrap:anywhere; }
+  .info-card { padding:16px; }
+  .info-card div { min-width:0; }
+  .info-card p,.info-card a,.footer a { overflow-wrap:anywhere; word-break:break-word; }
+  .form { padding:18px 16px; }
+  .footer .wrap,.capband .wrap,.stripband .wrap { padding-left:16px; padding-right:16px; }
+}

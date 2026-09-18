@@ -31,6 +31,9 @@ python manage.py createsuperuser   # optional — for the /admin panel
 python manage.py runserver      # API at http://127.0.0.1:8000
 ```
 
+The backend uses `DJANGO_DEBUG` instead of the generic `DEBUG` environment variable,
+which avoids collisions with values set by developer tools on Windows.
+
 Enquiries submitted in dev are **printed to this terminal** (console email backend) so you can see them without configuring mail.
 
 ### 2. Frontend (React)
@@ -102,7 +105,8 @@ the bundled one.
 
 1. Push this folder to a GitHub repo.
 2. Render dashboard → **New → Blueprint** → pick the repo. It reads `render.yaml` and
-   creates the Postgres database, the API service and the static site.
+   creates the API service and the static site. The free blueprint uses a seeded SQLite
+   catalogue, so it does not depend on Render's 30-day Free Postgres database.
 3. After the first deploy, confirm the service URLs match the env vars in `render.yaml`
    (`sai-api.onrender.com` / `sai-web.onrender.com`); adjust `ALLOWED_HOSTS`,
    `CORS_ALLOWED_ORIGINS` and `REACT_APP_API_URL` if you use custom names or a domain.
@@ -111,6 +115,8 @@ the bundled one.
 > **Free-tier note:** Render spins services down when idle, so the first request after a
 > quiet spell can take ~50 seconds while the API wakes. The contact form already handles a
 > slow/cold API gracefully and tells the visitor to call or WhatsApp if it times out.
+> SQLite changes made while the service is running are temporary on Render. Keep catalogue
+> changes in the seed data and use the phone/WhatsApp fallback for durable enquiries.
 
 ---
 
