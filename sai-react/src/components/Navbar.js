@@ -31,6 +31,8 @@ export default function Navbar() {
           </span>
         </Link>
 
+        <span className="nav-location">Pune, India <i /> Since 2005</span>
+
         <button className="nav-toggle" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(o => !o)}>
           <span /><span /><span />
         </button>

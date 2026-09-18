@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { getProducts, getCategories } from '../api';
-import { HERO_IMAGE } from '../assets';
+import { HERO_IMAGE, CATEGORY_IMAGES } from '../assets';
 import { STATS, COMPANY } from '../data/company';
 import ProductCard from '../components/ProductCard';
 import Reveal from '../components/Reveal';
@@ -39,7 +39,7 @@ export default function HomePage() {
     <main>
       <section className="hero">
         <div className="wrap hero-grid">
-          <div>
+          <div className="hero-copy">
             <motion.span className="eyebrow"
               initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               Precision gauge manufacturer · est. {COMPANY.founded}
@@ -59,14 +59,6 @@ export default function HomePage() {
               <Link to="/products" className="btn btn-solid">Browse products →</Link>
               <Link to="/contact" className="btn btn-ghost">Request a quote</Link>
             </motion.div>
-            <div className="hero-callouts">
-              {[['± 0.001 mm', 'Working tolerance'], ['22 ± 2 °C', 'Standard room'], ['IS · ISO · BS · ASME', 'Standards']].map(([v, l], i) => (
-                <motion.div className="callout" key={l}
-                  initial={reduce ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 + i * 0.08 }}>
-                  <div className="v">{v}</div><div className="l">{l}</div>
-                </motion.div>
-              ))}
-            </div>
           </div>
 
           <motion.div className="hero-visual"
@@ -85,6 +77,24 @@ export default function HomePage() {
               ))}
             </motion.div>
           </motion.div>
+
+          <div className="hero-bottom">
+            <div className="hero-callouts">
+              {[['± 0.001 mm', 'Working tolerance'], ['22 ± 2 °C', 'Standard room'], ['IS · ISO · BS · ASME', 'Standards']].map(([v, l], i) => (
+                <motion.div className="callout" key={l}
+                  initial={reduce ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 + i * 0.08 }}>
+                  <div className="v">{v}</div><div className="l">{l}</div>
+                </motion.div>
+              ))}
+            </div>
+            <motion.div className="hero-proof"
+              initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.62 }}>
+              <span className="proof-dot" />
+              <span>Manufactured and inspected in Pune</span>
+              <span className="proof-sep" />
+              <span>Direct workshop support</span>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -126,9 +136,15 @@ export default function HomePage() {
                 <motion.div key={c.slug}
                   initial={reduce ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.45, delay: Math.min(i * 0.05, 0.25) }}>
-                  <Link to={`/products?cat=${c.slug}`} className="pcard">
+                  <Link to={`/products?cat=${c.slug}`} className="pcard category-card">
+                    <div className="category-image">
+                      <img src={CATEGORY_IMAGES[c.slug] || HERO_IMAGE} alt="" />
+                    </div>
                     <div className="pcard-body">
-                      <span className="eyebrow" style={{ marginBottom: 4 }}>{String(c.product_count).padStart(2, '0')} items</span>
+                      <div className="category-meta">
+                        <span className="category-index">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="eyebrow">{String(c.product_count).padStart(2, '0')} items</span>
+                      </div>
                       <h3 className="pcard-name">{c.name}</h3>
                       <p style={{ color: 'var(--ink-soft)', fontSize: 14.5, flex: 1 }}>{c.blurb}</p>
                       <div className="pcard-foot"><span /><span className="pcard-view">Browse →</span></div>

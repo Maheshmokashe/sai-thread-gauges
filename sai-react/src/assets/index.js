@@ -29,6 +29,13 @@ export const PRODUCT_IMAGES = {
 };
 
 export const HERO_IMAGE = heroRings;
+export const CATEGORY_IMAGES = {
+  'thread-plug': m14x1_5,
+  'thread-ring': m2_5x0_45,
+  taper: bsptRc,
+  snap: snap154,
+  special: custom,
+};
 export const FACILITY = { lathe, grinder, threading, lmm400, signboard };
 
 // Resolve the best image for a product: an admin upload wins, else the bundled asset.
