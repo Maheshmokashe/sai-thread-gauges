@@ -12,8 +12,8 @@ export const COMPANY = {
   phoneSecondary: '7038282353',
   whatsapp: '919822278169', // international format, no +
   contacts: [
-    { name: 'Ramesh Hambarde', phone: '9822278169' },
-    { name: 'Shubham Hambarde', phone: '7038282353' },
+    { name: 'Ramesh Hambarde', phone: '9822278169', whatsapp: '919822278169' },
+    { name: 'Shubham Hambarde', phone: '7038282353', whatsapp: '917038282353' },
   ],
   address: {
     line1: 'S. No. 40/2/2/7, Digamber Nagar Lane No. 1',

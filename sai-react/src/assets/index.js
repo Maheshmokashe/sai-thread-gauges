@@ -8,7 +8,6 @@ import npt14 from './products/npt-1-4.jpg';
 import snap154 from './products/snap-15-4.jpg';
 import snap1875 from './products/snap-18-75.jpg';
 import custom from './products/custom.jpg';
-import heroRings from './products/hero-rings.jpg';
 import customThreadRing from './products/custom-thread-ring.jpg';
 import unf1x12_2b from './products/unf-1x12-2b.jpg';
 import m22x1_5_6h from './products/m22x1_5-6h.jpg';
@@ -34,7 +33,7 @@ export const PRODUCT_IMAGES = {
   'm22x1_5-6h': m22x1_5_6h,
 };
 
-export const HERO_IMAGE = heroRings;
+export const HERO_IMAGE = m2_5x0_45;
 export const CATEGORY_IMAGES = {
   'thread-plug': m14x1_5,
   'thread-ring': m2_5x0_45,

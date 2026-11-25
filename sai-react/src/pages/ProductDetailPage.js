@@ -115,9 +115,11 @@ export default function ProductDetailPage() {
 
             <div className="detail-actions">
               <Link to={`/contact?product=${encodeURIComponent(p.name)}`} className="btn btn-solid">Request a quote →</Link>
-              <a href={`https://wa.me/${COMPANY.whatsapp}?text=${waText}`} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-                Ask on WhatsApp
-              </a>
+              {COMPANY.contacts.map(contact => (
+                <a key={contact.phone} href={`https://wa.me/${contact.whatsapp}?text=${waText}`} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+                  WhatsApp {contact.name.split(' ')[0]}
+                </a>
+              ))}
             </div>
           </Reveal>
         </div>

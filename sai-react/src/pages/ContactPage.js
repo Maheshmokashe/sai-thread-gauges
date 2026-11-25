@@ -45,7 +45,7 @@ export default function ContactPage() {
     }
   };
 
-  const waHref = `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent('Hello SAI, I have a gauge enquiry.')}`;
+  const whatsappHref = contact => `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent('Hello SAI, I have a gauge enquiry.')}`;
   const mapSrc = 'https://www.google.com/maps?q=Digamber+Nagar+Lane+1+Near+Datta+Mandir+Wadgaon+Sheri+Pune+411014&output=embed';
 
   return (
@@ -68,9 +68,12 @@ export default function ContactPage() {
             </span>
             <div>
               <h4>Call or WhatsApp</h4>
-              <p><a href={`tel:${COMPANY.phonePrimary}`}>+91 {COMPANY.phonePrimary}</a> ({COMPANY.contacts[0].name})</p>
-              <p><a href={`tel:${COMPANY.phoneSecondary}`}>+91 {COMPANY.phoneSecondary}</a> ({COMPANY.contacts[1].name})</p>
-              <p style={{ marginTop: 6 }}><a href={waHref} target="_blank" rel="noopener noreferrer">Open WhatsApp chat →</a></p>
+              {COMPANY.contacts.map(contact => (
+                <p key={contact.phone}>
+                  <a href={`tel:${contact.phone}`}>+91 {contact.phone}</a> ({contact.name}) ·{' '}
+                  <a href={whatsappHref(contact)} target="_blank" rel="noopener noreferrer">WhatsApp →</a>
+                </p>
+              ))}
             </div>
           </div>
 
@@ -171,13 +174,14 @@ export default function ContactPage() {
             )}
             {status === 'warning' && (
               <div className="form-note warn">
-                Your enquiry was received, but the email notification is not configured yet. Please call +91 {COMPANY.phonePrimary} or <a href={waHref} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>message on WhatsApp</a>.
+                Your enquiry was received, but the email notification is not configured yet. Please call us or message{' '}
+                {COMPANY.contacts.map((contact, index) => <React.Fragment key={contact.phone}>{index > 0 && ' or '}<a href={whatsappHref(contact)} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>{contact.name.split(' ')[0]} on WhatsApp</a></React.Fragment>)}.
               </div>
             )}
             {status === 'error' && (
               <div className="form-note err">
                 That didn't send — the server may be waking up. Please try again, or reach us directly:
-                call +91 {COMPANY.phonePrimary} or <a href={waHref} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>message on WhatsApp</a>.
+                call us or message{' '}{COMPANY.contacts.map((contact, index) => <React.Fragment key={contact.phone}>{index > 0 && ' or '}<a href={whatsappHref(contact)} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>{contact.name.split(' ')[0]} on WhatsApp</a></React.Fragment>)}.
               </div>
             )}
           </form>
