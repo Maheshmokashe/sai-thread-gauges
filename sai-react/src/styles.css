@@ -577,8 +577,8 @@ body { letter-spacing:-.005em; }
   .hero-grid { grid-template-columns:1fr 420px; gap:28px 36px; }
 }
 @media (max-width:860px){
-  .nav { --nav-h:72px; height:var(--nav-h); }
-  .brand-mark { transform:translateY(3px); }
+  .nav { --nav-h:60px; height:var(--nav-h); }
+  .brand-mark { width:36px; height:36px; transform:none; }
   .hero { min-height:auto; }
   .hero-grid { grid-template-columns:1fr; grid-template-areas:'copy' 'visual' 'bottom'; padding-top:56px; padding-bottom:64px; }
   .hero-visual { width:min(100%,620px); }
