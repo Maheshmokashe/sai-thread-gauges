@@ -25,8 +25,8 @@ export default function Navbar() {
       <div className="wrap nav-inner">
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-mark">SAI</span>
-          <span>
-            <span className="brand-name">SAI Thread Gauges</span><br />
+          <span className="brand-copy">
+            <span className="brand-name">SAI Thread Gauges</span>
             <span className="brand-sub">&amp; Tools · Pune</span>
           </span>
         </Link>
