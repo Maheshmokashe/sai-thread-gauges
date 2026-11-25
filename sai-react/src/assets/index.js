@@ -10,11 +10,7 @@ import snap1875 from './products/snap-18-75.jpg';
 import custom from './products/custom.jpg';
 import heroRings from './products/hero-rings.jpg';
 
-import lathe from './facility/lathe.jpg';
-import grinder from './facility/grinder.jpg';
-import threading from './facility/threading.jpg';
 import lmm400 from './facility/lmm400.jpg';
-import signboard from './facility/signboard.jpg';
 import acmeLatheLongBed from './facility/acme-lathe-long-bed.jpg';
 import acmeLatheRamHead from './facility/acme-lathe-ram-head.jpg';
 import jonesShipmanGrinder from './facility/jones-shipman-grinder.jpg';
@@ -40,11 +36,7 @@ export const CATEGORY_IMAGES = {
   special: custom,
 };
 export const FACILITY = {
-  lathe,
-  grinder,
-  threading,
   lmm400,
-  signboard,
   acmeLatheLongBed,
   acmeLatheRamHead,
   jonesShipmanGrinder,

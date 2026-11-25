@@ -109,17 +109,13 @@ export default function AboutPage() {
             <div className="dimrule">the workshop</div>
             <div className="section-head"><h2 className="h-section">On the floor in Pune.</h2></div>
           </Reveal>
-          <div className="gallery">
-            <figure className="wide tall">
+          <div className="gallery gallery-four">
+            <figure className="wide">
               <img src={FACILITY.lmm400} alt="Octagon LMM 400 length measuring machine" />
               <figcaption>Octagon LMM 400 · standard room</figcaption>
             </figure>
-            <figure><img src={FACILITY.grinder} alt="Thread grinding machine" /><figcaption>Grinding</figcaption></figure>
-            <figure><img src={FACILITY.threading} alt="Threading machine" /><figcaption>Threading</figcaption></figure>
-            <figure className="wide"><img src={FACILITY.lathe} alt="ACME lathe and grinder" /><figcaption>Lathe &amp; grinder</figcaption></figure>
-            <figure><img src={FACILITY.signboard} alt="SAI Thread Gauges workshop signboard" /><figcaption>Somnath Nagar, Pune</figcaption></figure>
-            <figure className="wide machine-cutout"><img src={FACILITY.acmeLatheLongBed} alt="ACME long-bed lathe with grinding attachment" /><figcaption>ACME long-bed lathe</figcaption></figure>
-            <figure className="wide machine-cutout"><img src={FACILITY.acmeLatheRamHead} alt="ACME lathe with ram-head grinding attachment" /><figcaption>ACME lathe · ram-head attachment</figcaption></figure>
+            <figure><img src={FACILITY.acmeLatheLongBed} alt="ACME long-bed lathe with grinding attachment" /><figcaption>ACME long-bed lathe</figcaption></figure>
+            <figure><img src={FACILITY.acmeLatheRamHead} alt="ACME lathe with ram-head grinding attachment" /><figcaption>ACME lathe · ram-head attachment</figcaption></figure>
             <figure className="wide"><img src={FACILITY.jonesShipmanGrinder} alt="Jones and Shipman grinding machine in the Pune workshop" /><figcaption>Jones &amp; Shipman grinder</figcaption></figure>
           </div>
         </div>
