@@ -9,6 +9,9 @@ import snap154 from './products/snap-15-4.jpg';
 import snap1875 from './products/snap-18-75.jpg';
 import custom from './products/custom.jpg';
 import heroRings from './products/hero-rings.jpg';
+import customThreadRing from './products/custom-thread-ring.jpg';
+import unf1x12_2b from './products/unf-1x12-2b.jpg';
+import m22x1_5_6h from './products/m22x1_5-6h.jpg';
 
 import lmm400 from './facility/lmm400.jpg';
 import acmeLatheLongBed from './facility/acme-lathe-long-bed.jpg';
@@ -26,6 +29,9 @@ export const PRODUCT_IMAGES = {
   'snap-15-4': snap154,
   'snap-18-75': snap1875,
   custom,
+  'custom-thread-ring': customThreadRing,
+  'unf-1x12-2b': unf1x12_2b,
+  'm22x1_5-6h': m22x1_5_6h,
 };
 
 export const HERO_IMAGE = heroRings;

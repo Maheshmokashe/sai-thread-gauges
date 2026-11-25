@@ -101,6 +101,35 @@ PRODUCTS = [
                     'Send us a drawing for a quote.',
         featured=True,
     ),
+    dict(
+        name='Custom Thread Ring Gauge', slug='custom-thread-ring-gauge',
+        cat='thread-ring', image_key='custom-thread-ring',
+        summary='Precision thread ring gauge manufactured to customer specification',
+        thread_size='To drawing', thread_class='', standard='CUSTOM',
+        standard_ref='To customer drawing', go_id='', nogo_id='',
+        description='Custom thread ring gauge for checking external threads. Manufactured, '
+                    'precision ground and lapped to the customer drawing and tolerance.',
+    ),
+    dict(
+        name='1″ × 12 UNF – 2B Thread Plug Gauge', slug='1-x-12-unf-2b-plug',
+        cat='thread-plug', image_key='unf-1x12-2b',
+        summary='GO / NOGO thread plug gauge for 1-inch 12 UNF internal threads',
+        thread_size='1″×12 UNF', thread_class='2B', standard='ASME',
+        standard_ref='ASME B1.1', go_id='H2604/76', nogo_id='',
+        description='GO/NOGO thread plug gauge for checking 1″×12 UNF-2B internal threads. '
+                    'Hardened tool-steel construction, precision ground and lapped.',
+        featured=True,
+    ),
+    dict(
+        name='M22 × 1.5 – 6H Thread Plug Gauge', slug='m22x1-5-6h-plug',
+        cat='thread-plug', image_key='m22x1_5-6h',
+        summary='GO / NOGO thread plug gauge for M22×1.5 internal threads',
+        thread_size='M22×1.5', thread_class='6H', standard='ISO',
+        standard_ref='ISO 1502 / ISO 965', go_id='AFM/CVM/TG-02', nogo_id='',
+        description='GO/NOGO thread plug gauge for checking M22×1.5-6H internal threads. '
+                    'Hardened tool-steel construction, precision ground and lapped.',
+        featured=True,
+    ),
 ]
 
 
