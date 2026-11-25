@@ -15,6 +15,9 @@ import grinder from './facility/grinder.jpg';
 import threading from './facility/threading.jpg';
 import lmm400 from './facility/lmm400.jpg';
 import signboard from './facility/signboard.jpg';
+import acmeLatheLongBed from './facility/acme-lathe-long-bed.jpg';
+import acmeLatheRamHead from './facility/acme-lathe-ram-head.jpg';
+import jonesShipmanGrinder from './facility/jones-shipman-grinder.jpg';
 
 export const PRODUCT_IMAGES = {
   m2_5x0_45,
@@ -36,7 +39,16 @@ export const CATEGORY_IMAGES = {
   snap: snap154,
   special: custom,
 };
-export const FACILITY = { lathe, grinder, threading, lmm400, signboard };
+export const FACILITY = {
+  lathe,
+  grinder,
+  threading,
+  lmm400,
+  signboard,
+  acmeLatheLongBed,
+  acmeLatheRamHead,
+  jonesShipmanGrinder,
+};
 
 // Resolve the best image for a product: an admin upload wins, else the bundled asset.
 export function productImage(product) {

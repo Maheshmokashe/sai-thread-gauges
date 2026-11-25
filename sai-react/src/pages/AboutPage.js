@@ -118,6 +118,9 @@ export default function AboutPage() {
             <figure><img src={FACILITY.threading} alt="Threading machine" /><figcaption>Threading</figcaption></figure>
             <figure className="wide"><img src={FACILITY.lathe} alt="ACME lathe and grinder" /><figcaption>Lathe &amp; grinder</figcaption></figure>
             <figure><img src={FACILITY.signboard} alt="SAI Thread Gauges workshop signboard" /><figcaption>Somnath Nagar, Pune</figcaption></figure>
+            <figure className="wide machine-cutout"><img src={FACILITY.acmeLatheLongBed} alt="ACME long-bed lathe with grinding attachment" /><figcaption>ACME long-bed lathe</figcaption></figure>
+            <figure className="wide machine-cutout"><img src={FACILITY.acmeLatheRamHead} alt="ACME lathe with ram-head grinding attachment" /><figcaption>ACME lathe · ram-head attachment</figcaption></figure>
+            <figure className="wide"><img src={FACILITY.jonesShipmanGrinder} alt="Jones and Shipman grinding machine in the Pune workshop" /><figcaption>Jones &amp; Shipman grinder</figcaption></figure>
           </div>
         </div>
       </section>
