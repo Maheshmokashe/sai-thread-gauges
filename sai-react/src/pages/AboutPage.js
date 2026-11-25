@@ -68,6 +68,12 @@ export default function AboutPage() {
               </blockquote>
             </div>
           </Reveal>
+          <Reveal>
+            <figure className="about-identity">
+              <img src={FACILITY.companyCard} alt="SAI Thread Gauges and Tools company information" />
+              <figcaption>SAI Thread Gauges &amp; Tools</figcaption>
+            </figure>
+          </Reveal>
         </div>
       </section>
 

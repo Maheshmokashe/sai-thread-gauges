@@ -14,6 +14,7 @@ import lmm400 from './facility/lmm400.jpg';
 import acmeLatheLongBed from './facility/acme-lathe-long-bed.jpg';
 import acmeLatheRamHead from './facility/acme-lathe-ram-head.jpg';
 import jonesShipmanGrinder from './facility/jones-shipman-grinder.jpg';
+import companyCard from './facility/company-card.jpg';
 
 export const PRODUCT_IMAGES = {
   m2_5x0_45,
@@ -40,6 +41,7 @@ export const FACILITY = {
   acmeLatheLongBed,
   acmeLatheRamHead,
   jonesShipmanGrinder,
+  companyCard,
 };
 
 // Resolve the best image for a product: an admin upload wins, else the bundled asset.
