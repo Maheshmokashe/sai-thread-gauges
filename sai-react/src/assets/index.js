@@ -16,7 +16,7 @@ import lmm400 from './facility/lmm400.jpg';
 import acmeLatheLongBed from './facility/acme-lathe-long-bed.jpg';
 import acmeLatheRamHead from './facility/acme-lathe-ram-head.jpg';
 import jonesShipmanGrinder from './facility/jones-shipman-grinder.jpg';
-import companyCard from './facility/company-card.jpg';
+import companyCard from './facility/promotional-card.png';
 
 export const PRODUCT_IMAGES = {
   m2_5x0_45,
